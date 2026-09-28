@@ -1,0 +1,2868 @@
+{
+  "components": {
+    "schemas": {
+      "ActionType": {
+        "enum": [
+          "ACCEPT_RECOMMENDATION",
+          "CLINICIAN_OVERRIDE",
+          "DOCUMENT_PATIENT_REFUSAL",
+          "ESCALATE_TO_CLINICIAN"
+        ],
+        "title": "ActionType",
+        "type": "string"
+      },
+      "Actor": {
+        "additionalProperties": false,
+        "properties": {
+          "actorId": {
+            "title": "Actorid",
+            "type": "string"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "NURSE",
+              "CLINICIAN"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "tenantId": {
+            "title": "Tenantid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "actorId",
+          "displayName",
+          "tenantId",
+          "role"
+        ],
+        "title": "Actor",
+        "type": "object"
+      },
+      "ApiError": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "correlationId": {
+            "title": "Correlationid",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "correlationId"
+        ],
+        "title": "ApiError",
+        "type": "object"
+      },
+      "AssertionStatus": {
+        "enum": [
+          "PRESENT",
+          "ABSENT",
+          "UNKNOWN_NOT_STATED"
+        ],
+        "title": "AssertionStatus",
+        "type": "string"
+      },
+      "AuditEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "actorId": {
+            "title": "Actorid",
+            "type": "string"
+          },
+          "authoritySource": {
+            "title": "Authoritysource",
+            "type": "string"
+          },
+          "correlationId": {
+            "title": "Correlationid",
+            "type": "string"
+          },
+          "eventId": {
+            "title": "Eventid",
+            "type": "string"
+          },
+          "eventType": {
+            "title": "Eventtype",
+            "type": "string"
+          },
+          "factIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Factids",
+            "type": "array"
+          },
+          "manifestId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Manifestid"
+          },
+          "modelIdentifier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Modelidentifier"
+          },
+          "nurseActionId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nurseactionid"
+          },
+          "outcome": {
+            "title": "Outcome",
+            "type": "string"
+          },
+          "patientResponseId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Patientresponseid"
+          },
+          "policyVersion": {
+            "title": "Policyversion",
+            "type": "string"
+          },
+          "promptHash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompthash"
+          },
+          "recommendationId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recommendationid"
+          },
+          "resource": {
+            "title": "Resource",
+            "type": "string"
+          },
+          "rule": {
+            "title": "Rule",
+            "type": "string"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "sourceHashes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Sourcehashes",
+            "type": "array"
+          },
+          "stateVersion": {
+            "title": "Stateversion",
+            "type": "integer"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "turnId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Turnid"
+          },
+          "validationCodes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Validationcodes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "eventId",
+          "timestamp",
+          "eventType",
+          "sessionId",
+          "turnId",
+          "stateVersion",
+          "correlationId",
+          "actorId",
+          "resource",
+          "action",
+          "outcome",
+          "policyVersion",
+          "authoritySource",
+          "rule",
+          "modelIdentifier",
+          "promptHash",
+          "factIds",
+          "manifestId",
+          "sourceHashes",
+          "validationCodes",
+          "recommendationId",
+          "nurseActionId",
+          "patientResponseId"
+        ],
+        "title": "AuditEvent",
+        "type": "object"
+      },
+      "AuditResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AuditEvent"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sessionId",
+          "events"
+        ],
+        "title": "AuditResponse",
+        "type": "object"
+      },
+      "BiologicalSex": {
+        "enum": [
+          "FEMALE",
+          "MALE",
+          "OTHER",
+          "UNKNOWN"
+        ],
+        "title": "BiologicalSex",
+        "type": "string"
+      },
+      "ContextEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion": {
+            "enum": [
+              "AFFIRMED",
+              "NEGATED",
+              "UNCERTAIN"
+            ],
+            "title": "Assertion",
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/EventCategory"
+          },
+          "eventId": {
+            "title": "Eventid",
+            "type": "string"
+          },
+          "factId": {
+            "title": "Factid",
+            "type": "string"
+          },
+          "sourceText": {
+            "title": "Sourcetext",
+            "type": "string"
+          },
+          "subject": {
+            "enum": [
+              "PATIENT",
+              "FAMILY_OTHER",
+              "UNCERTAIN"
+            ],
+            "title": "Subject",
+            "type": "string"
+          },
+          "temporality": {
+            "enum": [
+              "CURRENT",
+              "HISTORICAL",
+              "UNCERTAIN"
+            ],
+            "title": "Temporality",
+            "type": "string"
+          }
+        },
+        "required": [
+          "eventId",
+          "category",
+          "assertion",
+          "temporality",
+          "subject",
+          "sourceText",
+          "factId"
+        ],
+        "title": "ContextEvent",
+        "type": "object"
+      },
+      "DemoCase": {
+        "additionalProperties": false,
+        "properties": {
+          "caseId": {
+            "title": "Caseid",
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "NORMAL",
+              "SAFETY",
+              "FAILURE",
+              "CONTEXT",
+              "POPULATION",
+              "SECURITY"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "caseId",
+          "label",
+          "description",
+          "category"
+        ],
+        "title": "DemoCase",
+        "type": "object"
+      },
+      "DemoCatalog": {
+        "additionalProperties": false,
+        "properties": {
+          "actors": {
+            "items": {
+              "$ref": "#/components/schemas/Actor"
+            },
+            "title": "Actors",
+            "type": "array"
+          },
+          "cases": {
+            "items": {
+              "$ref": "#/components/schemas/DemoCase"
+            },
+            "title": "Cases",
+            "type": "array"
+          },
+          "defaultCaseId": {
+            "title": "Defaultcaseid",
+            "type": "string"
+          },
+          "disclaimer": {
+            "title": "Disclaimer",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cases",
+          "actors",
+          "disclaimer",
+          "defaultCaseId"
+        ],
+        "title": "DemoCatalog",
+        "type": "object"
+      },
+      "DemoLoginRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "actorId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Actorid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "actorId"
+        ],
+        "title": "DemoLoginRequest",
+        "type": "object"
+      },
+      "DemoLoginResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "accessToken": {
+            "title": "Accesstoken",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/Actor"
+          },
+          "expiresAt": {
+            "format": "date-time",
+            "title": "Expiresat",
+            "type": "string"
+          },
+          "tokenType": {
+            "const": "bearer",
+            "title": "Tokentype",
+            "type": "string"
+          }
+        },
+        "required": [
+          "accessToken",
+          "tokenType",
+          "actor",
+          "expiresAt"
+        ],
+        "title": "DemoLoginResponse",
+        "type": "object"
+      },
+      "Disposition": {
+        "enum": [
+          "EMERGENCY_911",
+          "EMERGENCY_DEPARTMENT",
+          "CLINICIAN_WITHIN_24H",
+          "HOME_MONITORING",
+          "MANUAL_ESCALATION"
+        ],
+        "title": "Disposition",
+        "type": "string"
+      },
+      "EventCategory": {
+        "enum": [
+          "POSSIBLE_STROKE",
+          "SEVERE_RESPIRATORY_DISTRESS",
+          "SEVERE_CHEST_PAIN",
+          "ANAPHYLAXIS",
+          "UNCONTROLLED_BLEEDING",
+          "ALTERED_CONSCIOUSNESS",
+          "IMMEDIATE_SELF_HARM",
+          "CHEST_PAIN"
+        ],
+        "title": "EventCategory",
+        "type": "string"
+      },
+      "EvidenceChunk": {
+        "additionalProperties": false,
+        "properties": {
+          "chunkId": {
+            "title": "Chunkid",
+            "type": "string"
+          },
+          "chunkIndex": {
+            "title": "Chunkindex",
+            "type": "integer"
+          },
+          "guidelineId": {
+            "title": "Guidelineid",
+            "type": "string"
+          },
+          "guidelineVersion": {
+            "title": "Guidelineversion",
+            "type": "string"
+          },
+          "retrievalScore": {
+            "title": "Retrievalscore",
+            "type": "number"
+          },
+          "sourceHash": {
+            "title": "Sourcehash",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chunkId",
+          "guidelineId",
+          "guidelineVersion",
+          "chunkIndex",
+          "text",
+          "sourceHash",
+          "retrievalScore"
+        ],
+        "title": "EvidenceChunk",
+        "type": "object"
+      },
+      "Fact": {
+        "additionalProperties": false,
+        "properties": {
+          "assertionStatus": {
+            "$ref": "#/components/schemas/AssertionStatus"
+          },
+          "factId": {
+            "title": "Factid",
+            "type": "string"
+          },
+          "factType": {
+            "title": "Facttype",
+            "type": "string"
+          },
+          "normalizedValue": {
+            "title": "Normalizedvalue",
+            "type": "string"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          }
+        },
+        "required": [
+          "factId",
+          "factType",
+          "normalizedValue",
+          "assertionStatus",
+          "source"
+        ],
+        "title": "Fact",
+        "type": "object"
+      },
+      "FactGraph": {
+        "additionalProperties": false,
+        "properties": {
+          "facts": {
+            "items": {
+              "$ref": "#/components/schemas/Fact"
+            },
+            "title": "Facts",
+            "type": "array"
+          }
+        },
+        "required": [
+          "facts"
+        ],
+        "title": "FactGraph",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HealthResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "app": {
+            "title": "App",
+            "type": "string"
+          },
+          "mode": {
+            "title": "Mode",
+            "type": "string"
+          },
+          "status": {
+            "const": "ok",
+            "title": "Status",
+            "type": "string"
+          },
+          "syntheticOnly": {
+            "const": true,
+            "title": "Syntheticonly",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "app",
+          "mode",
+          "syntheticOnly"
+        ],
+        "title": "HealthResponse",
+        "type": "object"
+      },
+      "ManifestEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "alias": {
+            "title": "Alias",
+            "type": "string"
+          },
+          "chunk": {
+            "$ref": "#/components/schemas/EvidenceChunk"
+          }
+        },
+        "required": [
+          "alias",
+          "chunk"
+        ],
+        "title": "ManifestEvidence",
+        "type": "object"
+      },
+      "MessageResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "title": "MessageResponse",
+        "type": "object"
+      },
+      "MetricSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "p50Ms": {
+            "title": "P50Ms",
+            "type": "number"
+          },
+          "p95Ms": {
+            "title": "P95Ms",
+            "type": "number"
+          },
+          "p99Ms": {
+            "title": "P99Ms",
+            "type": "number"
+          },
+          "samples": {
+            "title": "Samples",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "samples",
+          "p50Ms",
+          "p95Ms",
+          "p99Ms"
+        ],
+        "title": "MetricSummary",
+        "type": "object"
+      },
+      "MetricsResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "deadlineExceededRate": {
+            "title": "Deadlineexceededrate",
+            "type": "number"
+          },
+          "degradedModeRate": {
+            "title": "Degradedmoderate",
+            "type": "number"
+          },
+          "provider429Rate": {
+            "title": "Provider429Rate",
+            "type": "number"
+          },
+          "requestCount": {
+            "title": "Requestcount",
+            "type": "integer"
+          },
+          "stages": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MetricSummary"
+            },
+            "title": "Stages",
+            "type": "object"
+          },
+          "targetIsGuarantee": {
+            "const": false,
+            "title": "Targetisguarantee",
+            "type": "boolean"
+          },
+          "targetP95Ms": {
+            "title": "Targetp95Ms",
+            "type": "integer"
+          },
+          "timeToSafeRender": {
+            "$ref": "#/components/schemas/MetricSummary"
+          }
+        },
+        "required": [
+          "requestCount",
+          "stages",
+          "provider429Rate",
+          "deadlineExceededRate",
+          "degradedModeRate",
+          "timeToSafeRender",
+          "targetP95Ms",
+          "targetIsGuarantee"
+        ],
+        "title": "MetricsResponse",
+        "type": "object"
+      },
+      "NurseAction": {
+        "additionalProperties": false,
+        "properties": {
+          "actionId": {
+            "title": "Actionid",
+            "type": "string"
+          },
+          "actionType": {
+            "$ref": "#/components/schemas/ActionType"
+          },
+          "actorId": {
+            "title": "Actorid",
+            "type": "string"
+          },
+          "overrideDisposition": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Disposition"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "patientResponse": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PatientResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          },
+          "targetRecommendationId": {
+            "title": "Targetrecommendationid",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "actionId",
+          "targetRecommendationId",
+          "actorId",
+          "actionType",
+          "rationale",
+          "timestamp",
+          "overrideDisposition",
+          "patientResponse"
+        ],
+        "title": "NurseAction",
+        "type": "object"
+      },
+      "NurseActionRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "actionId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Actionid",
+            "type": "string"
+          },
+          "actionType": {
+            "$ref": "#/components/schemas/ActionType"
+          },
+          "baseStateVersion": {
+            "minimum": 0.0,
+            "title": "Basestateversion",
+            "type": "integer"
+          },
+          "overrideDisposition": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Disposition"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "rationale": {
+            "maxLength": 3000,
+            "minLength": 3,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "statedPreference": {
+            "anyOf": [
+              {
+                "maxLength": 2000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Statedpreference"
+          },
+          "targetRecommendationId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Targetrecommendationid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "actionId",
+          "targetRecommendationId",
+          "baseStateVersion",
+          "actionType",
+          "rationale"
+        ],
+        "title": "NurseActionRequest",
+        "type": "object"
+      },
+      "PatientContext": {
+        "additionalProperties": false,
+        "properties": {
+          "allergies": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Allergies",
+            "type": "array"
+          },
+          "demographics": {
+            "$ref": "#/components/schemas/PatientDemographics"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "history": {
+            "items": {
+              "type": "string"
+            },
+            "title": "History",
+            "type": "array"
+          },
+          "medications": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Medications",
+            "type": "array"
+          },
+          "patientId": {
+            "title": "Patientid",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "patientId",
+          "displayName",
+          "demographics",
+          "history",
+          "medications",
+          "allergies",
+          "synthetic"
+        ],
+        "title": "PatientContext",
+        "type": "object"
+      },
+      "PatientDemographics": {
+        "additionalProperties": false,
+        "properties": {
+          "ageInMonths": {
+            "maximum": 1560.0,
+            "minimum": 0.0,
+            "title": "Ageinmonths",
+            "type": "integer"
+          },
+          "biologicalSex": {
+            "$ref": "#/components/schemas/BiologicalSex"
+          },
+          "isPregnant": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ispregnant"
+          }
+        },
+        "required": [
+          "ageInMonths",
+          "isPregnant",
+          "biologicalSex"
+        ],
+        "title": "PatientDemographics",
+        "type": "object"
+      },
+      "PatientResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "responseId": {
+            "title": "Responseid",
+            "type": "string"
+          },
+          "responseType": {
+            "$ref": "#/components/schemas/PatientResponseType"
+          },
+          "statedPreference": {
+            "title": "Statedpreference",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "responseId",
+          "responseType",
+          "statedPreference",
+          "timestamp"
+        ],
+        "title": "PatientResponse",
+        "type": "object"
+      },
+      "PatientResponseType": {
+        "enum": [
+          "CONSENTED",
+          "REFUSED_RECOMMENDED_CARE",
+          "UNABLE_TO_CONSENT"
+        ],
+        "title": "PatientResponseType",
+        "type": "string"
+      },
+      "ProcessingStatus": {
+        "enum": [
+          "PENDING",
+          "PROCESSING",
+          "COMPLETED",
+          "FAILED"
+        ],
+        "title": "ProcessingStatus",
+        "type": "string"
+      },
+      "RationaleClaim": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "title": "Claim",
+            "type": "string"
+          },
+          "claimId": {
+            "title": "Claimid",
+            "type": "string"
+          },
+          "evidenceRefs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "title": "Evidencerefs",
+            "type": "array"
+          },
+          "factRefs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "title": "Factrefs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "claimId",
+          "claim",
+          "factRefs",
+          "evidenceRefs"
+        ],
+        "title": "RationaleClaim",
+        "type": "object"
+      },
+      "ReadinessState": {
+        "enum": [
+          "READY",
+          "INCOMPLETE",
+          "UNGROUNDED",
+          "SAFETY_LOCKED"
+        ],
+        "title": "ReadinessState",
+        "type": "string"
+      },
+      "RenderMetricRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "durationMs": {
+            "maximum": 300000.0,
+            "minimum": 0.0,
+            "title": "Durationms",
+            "type": "number"
+          },
+          "responseId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Responseid",
+            "type": "string"
+          },
+          "sessionId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Sessionid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sessionId",
+          "responseId",
+          "durationMs"
+        ],
+        "title": "RenderMetricRequest",
+        "type": "object"
+      },
+      "RetrievalManifest": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ManifestEvidence"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "integrityViolations": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Integrityviolations",
+            "type": "array"
+          },
+          "manifestId": {
+            "title": "Manifestid",
+            "type": "string"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "stateVersion": {
+            "title": "Stateversion",
+            "type": "integer"
+          },
+          "turnId": {
+            "title": "Turnid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "manifestId",
+          "sessionId",
+          "turnId",
+          "stateVersion",
+          "evidence",
+          "integrityViolations"
+        ],
+        "title": "RetrievalManifest",
+        "type": "object"
+      },
+      "SafetyAssessment": {
+        "additionalProperties": false,
+        "properties": {
+          "contextCertain": {
+            "title": "Contextcertain",
+            "type": "boolean"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/ContextEvent"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "matchedRuleIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Matchedruleids",
+            "type": "array"
+          },
+          "requiredDisposition": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Disposition"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "safetyLocked": {
+            "title": "Safetylocked",
+            "type": "boolean"
+          },
+          "supportedPopulation": {
+            "title": "Supportedpopulation",
+            "type": "boolean"
+          },
+          "validationCodes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Validationcodes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "supportedPopulation",
+          "contextCertain",
+          "safetyLocked",
+          "requiredDisposition",
+          "matchedRuleIds",
+          "events",
+          "validationCodes"
+        ],
+        "title": "SafetyAssessment",
+        "type": "object"
+      },
+      "SessionCreateRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "caseId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Caseid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "caseId"
+        ],
+        "title": "SessionCreateRequest",
+        "type": "object"
+      },
+      "SessionPermissions": {
+        "additionalProperties": false,
+        "properties": {
+          "authorizationServiceAvailable": {
+            "title": "Authorizationserviceavailable",
+            "type": "boolean"
+          },
+          "canAccept": {
+            "title": "Canaccept",
+            "type": "boolean"
+          },
+          "canDocumentRefusal": {
+            "title": "Candocumentrefusal",
+            "type": "boolean"
+          },
+          "canEscalate": {
+            "title": "Canescalate",
+            "type": "boolean"
+          },
+          "canOverride": {
+            "title": "Canoverride",
+            "type": "boolean"
+          },
+          "canView": {
+            "title": "Canview",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "canView",
+          "canAccept",
+          "canDocumentRefusal",
+          "canEscalate",
+          "canOverride",
+          "authorizationServiceAvailable"
+        ],
+        "title": "SessionPermissions",
+        "type": "object"
+      },
+      "SessionSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "caseId": {
+            "title": "Caseid",
+            "type": "string"
+          },
+          "patientName": {
+            "title": "Patientname",
+            "type": "string"
+          },
+          "readinessState": {
+            "$ref": "#/components/schemas/ReadinessState"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "stateVersion": {
+            "title": "Stateversion",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sessionId",
+          "patientName",
+          "caseId",
+          "stateVersion",
+          "readinessState"
+        ],
+        "title": "SessionSummary",
+        "type": "object"
+      },
+      "SessionView": {
+        "additionalProperties": false,
+        "properties": {
+          "actions": {
+            "items": {
+              "$ref": "#/components/schemas/NurseAction"
+            },
+            "title": "Actions",
+            "type": "array"
+          },
+          "careTeamId": {
+            "title": "Careteamid",
+            "type": "string"
+          },
+          "caseId": {
+            "title": "Caseid",
+            "type": "string"
+          },
+          "latestResponse": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TriageResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "nurseNotes": {
+            "title": "Nursenotes",
+            "type": "string"
+          },
+          "originalTranscript": {
+            "title": "Originaltranscript",
+            "type": "string"
+          },
+          "patient": {
+            "$ref": "#/components/schemas/PatientContext"
+          },
+          "patientOutcome": {
+            "enum": [
+              "UNRECORDED",
+              "CARE_ACCEPTED",
+              "REMAINS_HOME",
+              "CLINICIAN_REVIEW"
+            ],
+            "title": "Patientoutcome",
+            "type": "string"
+          },
+          "patientResponses": {
+            "items": {
+              "$ref": "#/components/schemas/PatientResponse"
+            },
+            "title": "Patientresponses",
+            "type": "array"
+          },
+          "permissions": {
+            "$ref": "#/components/schemas/SessionPermissions"
+          },
+          "recommendationStatus": {
+            "enum": [
+              "AWAITING_REVIEW",
+              "ACCEPTED",
+              "DECLINED_BY_PATIENT",
+              "ESCALATED",
+              "OVERRIDDEN"
+            ],
+            "title": "Recommendationstatus",
+            "type": "string"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/SystemRecommendation"
+            },
+            "title": "Recommendations",
+            "type": "array"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "state": {
+            "$ref": "#/components/schemas/TriageState"
+          }
+        },
+        "required": [
+          "sessionId",
+          "caseId",
+          "careTeamId",
+          "patient",
+          "originalTranscript",
+          "nurseNotes",
+          "state",
+          "latestResponse",
+          "recommendations",
+          "actions",
+          "patientResponses",
+          "recommendationStatus",
+          "patientOutcome",
+          "permissions"
+        ],
+        "title": "SessionView",
+        "type": "object"
+      },
+      "StageTimings": {
+        "additionalProperties": false,
+        "properties": {
+          "authorizationMs": {
+            "title": "Authorizationms",
+            "type": "number"
+          },
+          "databaseCommitMs": {
+            "title": "Databasecommitms",
+            "type": "number"
+          },
+          "extractionMs": {
+            "title": "Extractionms",
+            "type": "number"
+          },
+          "policyValidationMs": {
+            "title": "Policyvalidationms",
+            "type": "number"
+          },
+          "retrievalMs": {
+            "title": "Retrievalms",
+            "type": "number"
+          },
+          "synthesisMs": {
+            "title": "Synthesisms",
+            "type": "number"
+          },
+          "totalMs": {
+            "title": "Totalms",
+            "type": "number"
+          }
+        },
+        "required": [
+          "extractionMs",
+          "retrievalMs",
+          "synthesisMs",
+          "policyValidationMs",
+          "authorizationMs",
+          "databaseCommitMs",
+          "totalMs"
+        ],
+        "title": "StageTimings",
+        "type": "object"
+      },
+      "SystemRecommendation": {
+        "additionalProperties": false,
+        "properties": {
+          "computedStateVersion": {
+            "title": "Computedstateversion",
+            "type": "integer"
+          },
+          "readinessState": {
+            "$ref": "#/components/schemas/ReadinessState"
+          },
+          "recommendationId": {
+            "title": "Recommendationid",
+            "type": "string"
+          },
+          "recommendedDisposition": {
+            "$ref": "#/components/schemas/Disposition"
+          },
+          "safetyLocked": {
+            "title": "Safetylocked",
+            "type": "boolean"
+          },
+          "supersedesRecommendationId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Supersedesrecommendationid"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "validatedRationale": {
+            "items": {
+              "$ref": "#/components/schemas/RationaleClaim"
+            },
+            "title": "Validatedrationale",
+            "type": "array"
+          }
+        },
+        "required": [
+          "recommendationId",
+          "recommendedDisposition",
+          "readinessState",
+          "safetyLocked",
+          "validatedRationale",
+          "computedStateVersion",
+          "timestamp",
+          "supersedesRecommendationId"
+        ],
+        "title": "SystemRecommendation",
+        "type": "object"
+      },
+      "TriageRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "baseStateVersion": {
+            "minimum": 0.0,
+            "title": "Basestateversion",
+            "type": "integer"
+          },
+          "nurseNotes": {
+            "anyOf": [
+              {
+                "maxLength": 6000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nursenotes"
+          },
+          "patientDemographics": {
+            "$ref": "#/components/schemas/PatientDemographics"
+          },
+          "patientId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Patientid",
+            "type": "string"
+          },
+          "sessionId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "symptomDescription": {
+            "maxLength": 12000,
+            "minLength": 1,
+            "title": "Symptomdescription",
+            "type": "string"
+          },
+          "turnId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Turnid",
+            "type": "string"
+          },
+          "vitalSigns": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/VitalSigns"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "sessionId",
+          "turnId",
+          "baseStateVersion",
+          "patientId",
+          "symptomDescription",
+          "patientDemographics"
+        ],
+        "title": "TriageRequest",
+        "type": "object"
+      },
+      "TriageResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ManifestEvidence"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "factGraph": {
+            "$ref": "#/components/schemas/FactGraph"
+          },
+          "missingInformation": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missinginformation",
+            "type": "array"
+          },
+          "mode": {
+            "enum": [
+              "DETERMINISTIC",
+              "PROVIDER",
+              "MANUAL"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "rationale": {
+            "items": {
+              "$ref": "#/components/schemas/RationaleClaim"
+            },
+            "title": "Rationale",
+            "type": "array"
+          },
+          "readinessState": {
+            "$ref": "#/components/schemas/ReadinessState"
+          },
+          "recommendation": {
+            "$ref": "#/components/schemas/SystemRecommendation"
+          },
+          "responseId": {
+            "title": "Responseid",
+            "type": "string"
+          },
+          "retrievalManifest": {
+            "$ref": "#/components/schemas/RetrievalManifest"
+          },
+          "safety": {
+            "$ref": "#/components/schemas/SafetyAssessment"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "stateVersion": {
+            "title": "Stateversion",
+            "type": "integer"
+          },
+          "systemAlerts": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Systemalerts",
+            "type": "array"
+          },
+          "timings": {
+            "$ref": "#/components/schemas/StageTimings"
+          },
+          "turnId": {
+            "title": "Turnid",
+            "type": "string"
+          },
+          "validationCodes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Validationcodes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "responseId",
+          "sessionId",
+          "turnId",
+          "stateVersion",
+          "readinessState",
+          "recommendation",
+          "rationale",
+          "evidence",
+          "missingInformation",
+          "systemAlerts",
+          "factGraph",
+          "safety",
+          "retrievalManifest",
+          "timings",
+          "mode",
+          "validationCodes"
+        ],
+        "title": "TriageResponse",
+        "type": "object"
+      },
+      "TriageState": {
+        "additionalProperties": false,
+        "properties": {
+          "activeTurnId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activeturnid"
+          },
+          "currentStateVersion": {
+            "title": "Currentstateversion",
+            "type": "integer"
+          },
+          "processingStatus": {
+            "$ref": "#/components/schemas/ProcessingStatus"
+          },
+          "readinessState": {
+            "$ref": "#/components/schemas/ReadinessState"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sessionId",
+          "processingStatus",
+          "readinessState",
+          "currentStateVersion",
+          "activeTurnId"
+        ],
+        "title": "TriageState",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "VitalSigns": {
+        "additionalProperties": false,
+        "properties": {
+          "heartRate": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "maximum": 350.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heartrate"
+          },
+          "oxygenSaturation": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oxygensaturation"
+          },
+          "respiratoryRate": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "maximum": 120.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Respiratoryrate"
+          },
+          "temperatureC": {
+            "anyOf": [
+              {
+                "maximum": 45.0,
+                "minimum": 25.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Temperaturec"
+          }
+        },
+        "title": "VitalSigns",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "description": "Synthetic demonstration only. Not a medical device or real clinical guidance.",
+    "title": "Meridian Patient Navigation & Triage Copilot",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/auth/demo": {
+      "post": {
+        "operationId": "demoLogin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DemoLoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemoLoginResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Demo Login"
+      }
+    },
+    "/api/demo": {
+      "get": {
+        "operationId": "getDemoCatalog",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemoCatalog"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Demo Catalog"
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/api/metrics": {
+      "get": {
+        "operationId": "getMetrics",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Metrics"
+      }
+    },
+    "/api/metrics/render": {
+      "post": {
+        "operationId": "recordSafeRender",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RenderMetricRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Render Metric"
+      }
+    },
+    "/api/sessions": {
+      "get": {
+        "operationId": "listSessions",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/SessionSummary"
+                  },
+                  "title": "Response Listsessions",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Sessions"
+      },
+      "post": {
+        "operationId": "createSession",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Session"
+      }
+    },
+    "/api/sessions/{sessionId}": {
+      "get": {
+        "operationId": "getSession",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "schema": {
+              "title": "Sessionid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Get Session"
+      }
+    },
+    "/api/sessions/{sessionId}/actions": {
+      "post": {
+        "operationId": "recordNurseAction",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "schema": {
+              "title": "Sessionid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NurseActionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Record Action"
+      }
+    },
+    "/api/sessions/{sessionId}/audit": {
+      "get": {
+        "operationId": "getAudit",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "schema": {
+              "title": "Sessionid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Audit"
+      }
+    },
+    "/api/triage": {
+      "post": {
+        "operationId": "runTriage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TriageResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Triage"
+      }
+    }
+  }
+}

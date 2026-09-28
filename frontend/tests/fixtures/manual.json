@@ -1,0 +1,294 @@
+{
+  "sessionId": "session-118fc415d1f441e7956ab6b74b2be698",
+  "caseId": "llm-timeout",
+  "careTeamId": "meridian-navigation",
+  "patient": {
+    "patientId": "patient-llm-timeout",
+    "displayName": "Jordan Ellis",
+    "demographics": {
+      "ageInMonths": 456,
+      "isPregnant": false,
+      "biologicalSex": "FEMALE"
+    },
+    "history": [
+      "Seasonal allergies (synthetic record)",
+      "Cardiac history not documented"
+    ],
+    "medications": [
+      "Cetirizine, recorded as needed (synthetic)"
+    ],
+    "allergies": [
+      "No known medication allergies in synthetic record"
+    ],
+    "synthetic": true
+  },
+  "originalTranscript": "I have a mild headache today.",
+  "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+  "state": {
+    "sessionId": "session-118fc415d1f441e7956ab6b74b2be698",
+    "processingStatus": "COMPLETED",
+    "readinessState": "UNGROUNDED",
+    "currentStateVersion": 1,
+    "activeTurnId": "ui-test-turn"
+  },
+  "latestResponse": {
+    "responseId": "response-58cfa778cde548d4aa9adecf019eeb77",
+    "sessionId": "session-118fc415d1f441e7956ab6b74b2be698",
+    "turnId": "ui-test-turn",
+    "stateVersion": 1,
+    "readinessState": "UNGROUNDED",
+    "recommendation": {
+      "recommendationId": "recommendation-074552aded254271b35b4c64b1df7526",
+      "recommendedDisposition": "MANUAL_ESCALATION",
+      "readinessState": "UNGROUNDED",
+      "safetyLocked": false,
+      "validatedRationale": [],
+      "computedStateVersion": 1,
+      "timestamp": "2026-09-28T21:11:34.473583Z",
+      "supersedesRecommendationId": null
+    },
+    "rationale": [],
+    "evidence": [
+      {
+        "alias": "Ref-1",
+        "chunk": {
+          "chunkId": "demo-mild-headache:0",
+          "guidelineId": "DEMO-MILD-HEADACHE",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+          "sourceHash": "1d1f4292ff8050ed2fe49b56c4dad3c77c98d007b41248dae5bd425ff7f5d236",
+          "retrievalScore": 0.26136387
+        }
+      },
+      {
+        "alias": "Ref-2",
+        "chunk": {
+          "chunkId": "demo-manual:0",
+          "guidelineId": "DEMO-MANUAL",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+          "sourceHash": "f09defadf48bb1c16d7cc71180161596298920e2a79dde36553d6f26d587f8c8",
+          "retrievalScore": 0.0786673
+        }
+      },
+      {
+        "alias": "Ref-3",
+        "chunk": {
+          "chunkId": "demo-home-monitoring:0",
+          "guidelineId": "DEMO-HOME-MONITORING",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, HOME_MONITORING is possible only after every deterministic home gate passes: the adult has explicitly confirmed nonpregnancy; current eligible guidance is present; every safety category is explicitly absent; cardiac history is known; and the assessment exactly matches the complete fixture: Mild runny nose for one day. Symptoms are improving. No chest pain. No severe breathing difficulty. No facial droop. No arm weakness. No speech difficulty. No throat swelling. No uncontrolled bleeding. No confusion. No thoughts of self-harm. No cardiac history. Incomplete, ambiguous, or unsupported cases do not meet this fixture. A current affirmed safety event prevents this pathway.",
+          "sourceHash": "5acc5f4ea374193290b1a9ce08c80e7a42079a178ea4db6790cd8bf0a08201a5",
+          "retrievalScore": 0.054018
+        }
+      }
+    ],
+    "missingInformation": [
+      "Symptom onset and duration",
+      "Patient cardiac history",
+      "Explicit safety assessment: possible stroke, severe respiratory distress, severe chest pain, anaphylaxis, uncontrolled bleeding, altered consciousness, immediate self harm, chest pain"
+    ],
+    "systemAlerts": [
+      "AI synthesis unavailable \u2014 manual clinical review required."
+    ],
+    "factGraph": {
+      "facts": [
+        {
+          "factId": "F-age",
+          "factType": "AGE_MONTHS",
+          "normalizedValue": "456",
+          "assertionStatus": "PRESENT",
+          "source": "verified patient context"
+        },
+        {
+          "factId": "F-pregnancy",
+          "factType": "PREGNANCY",
+          "normalizedValue": "false",
+          "assertionStatus": "ABSENT",
+          "source": "verified patient context"
+        },
+        {
+          "factId": "F-safety-possible_stroke",
+          "factType": "CURRENT_SAFETY:POSSIBLE_STROKE",
+          "normalizedValue": "POSSIBLE_STROKE",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-severe_respiratory_distress",
+          "factType": "CURRENT_SAFETY:SEVERE_RESPIRATORY_DISTRESS",
+          "normalizedValue": "SEVERE_RESPIRATORY_DISTRESS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-severe_chest_pain",
+          "factType": "CURRENT_SAFETY:SEVERE_CHEST_PAIN",
+          "normalizedValue": "SEVERE_CHEST_PAIN",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-anaphylaxis",
+          "factType": "CURRENT_SAFETY:ANAPHYLAXIS",
+          "normalizedValue": "ANAPHYLAXIS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-uncontrolled_bleeding",
+          "factType": "CURRENT_SAFETY:UNCONTROLLED_BLEEDING",
+          "normalizedValue": "UNCONTROLLED_BLEEDING",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-altered_consciousness",
+          "factType": "CURRENT_SAFETY:ALTERED_CONSCIOUSNESS",
+          "normalizedValue": "ALTERED_CONSCIOUSNESS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-immediate_self_harm",
+          "factType": "CURRENT_SAFETY:IMMEDIATE_SELF_HARM",
+          "normalizedValue": "IMMEDIATE_SELF_HARM",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-chest_pain",
+          "factType": "CURRENT_SAFETY:CHEST_PAIN",
+          "normalizedValue": "CHEST_PAIN",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-mild-headache",
+          "factType": "MILD_HEADACHE",
+          "normalizedValue": "mild headache",
+          "assertionStatus": "PRESENT",
+          "source": "symptom assessment"
+        },
+        {
+          "factId": "F-cardiac-history",
+          "factType": "CARDIAC_HISTORY",
+          "normalizedValue": "cardiac history",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-onset",
+          "factType": "SYMPTOM_ONSET",
+          "normalizedValue": "unknown",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-complete-assessment",
+          "factType": "CURATED_COMPLETE_ASSESSMENT",
+          "normalizedValue": "not established",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "synthetic home policy exact assessment gate"
+        }
+      ]
+    },
+    "safety": {
+      "supportedPopulation": true,
+      "contextCertain": true,
+      "safetyLocked": false,
+      "requiredDisposition": null,
+      "matchedRuleIds": [],
+      "events": [],
+      "validationCodes": []
+    },
+    "retrievalManifest": {
+      "manifestId": "manifest-95846aa58dce12c77a5d63da5a24c433",
+      "sessionId": "session-118fc415d1f441e7956ab6b74b2be698",
+      "turnId": "ui-test-turn",
+      "stateVersion": 1,
+      "evidence": [
+        {
+          "alias": "Ref-1",
+          "chunk": {
+            "chunkId": "demo-mild-headache:0",
+            "guidelineId": "DEMO-MILD-HEADACHE",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+            "sourceHash": "1d1f4292ff8050ed2fe49b56c4dad3c77c98d007b41248dae5bd425ff7f5d236",
+            "retrievalScore": 0.26136387
+          }
+        },
+        {
+          "alias": "Ref-2",
+          "chunk": {
+            "chunkId": "demo-manual:0",
+            "guidelineId": "DEMO-MANUAL",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+            "sourceHash": "f09defadf48bb1c16d7cc71180161596298920e2a79dde36553d6f26d587f8c8",
+            "retrievalScore": 0.0786673
+          }
+        },
+        {
+          "alias": "Ref-3",
+          "chunk": {
+            "chunkId": "demo-home-monitoring:0",
+            "guidelineId": "DEMO-HOME-MONITORING",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, HOME_MONITORING is possible only after every deterministic home gate passes: the adult has explicitly confirmed nonpregnancy; current eligible guidance is present; every safety category is explicitly absent; cardiac history is known; and the assessment exactly matches the complete fixture: Mild runny nose for one day. Symptoms are improving. No chest pain. No severe breathing difficulty. No facial droop. No arm weakness. No speech difficulty. No throat swelling. No uncontrolled bleeding. No confusion. No thoughts of self-harm. No cardiac history. Incomplete, ambiguous, or unsupported cases do not meet this fixture. A current affirmed safety event prevents this pathway.",
+            "sourceHash": "5acc5f4ea374193290b1a9ce08c80e7a42079a178ea4db6790cd8bf0a08201a5",
+            "retrievalScore": 0.054018
+          }
+        }
+      ],
+      "integrityViolations": []
+    },
+    "timings": {
+      "extractionMs": 0.474863000363257,
+      "retrievalMs": 12.926712000080443,
+      "synthesisMs": 0.031866999961494,
+      "policyValidationMs": 0.030529000014212215,
+      "authorizationMs": 1.0129429997505213,
+      "databaseCommitMs": 1.092,
+      "totalMs": 18.758129999724943
+    },
+    "mode": "MANUAL",
+    "validationCodes": [
+      "SYNTHETIC_NORMAL_RULE_PASSED",
+      "HOME_GATES_NOT_MET",
+      "PROVIDER_TIMEOUT",
+      "MANUAL_TRIAGE_REQUIRED"
+    ]
+  },
+  "recommendations": [
+    {
+      "recommendationId": "recommendation-074552aded254271b35b4c64b1df7526",
+      "recommendedDisposition": "MANUAL_ESCALATION",
+      "readinessState": "UNGROUNDED",
+      "safetyLocked": false,
+      "validatedRationale": [],
+      "computedStateVersion": 1,
+      "timestamp": "2026-09-28T21:11:34.473583Z",
+      "supersedesRecommendationId": null
+    }
+  ],
+  "actions": [],
+  "patientResponses": [],
+  "recommendationStatus": "AWAITING_REVIEW",
+  "patientOutcome": "UNRECORDED",
+  "permissions": {
+    "canView": true,
+    "canAccept": false,
+    "canDocumentRefusal": true,
+    "canEscalate": true,
+    "canOverride": false,
+    "authorizationServiceAvailable": true
+  }
+}

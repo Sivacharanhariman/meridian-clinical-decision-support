@@ -1,0 +1,639 @@
+{
+  "actors": [
+    {
+      "actorId": "nurse-avery",
+      "displayName": "Avery Chen, RN",
+      "tenantId": "meridian",
+      "role": "NURSE"
+    },
+    {
+      "actorId": "clinician-morgan",
+      "displayName": "Morgan Lee, MD",
+      "tenantId": "meridian",
+      "role": "CLINICIAN"
+    },
+    {
+      "actorId": "nurse-delegated",
+      "displayName": "Sam Rivera, RN \u00b7 delegated",
+      "tenantId": "meridian",
+      "role": "NURSE"
+    },
+    {
+      "actorId": "nurse-cross-tenant",
+      "displayName": "Taylor Brooks, RN \u00b7 other tenant",
+      "tenantId": "other-health",
+      "role": "NURSE"
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "normal-adult",
+      "label": "A \u00b7 Everyday uncertainty",
+      "category": "NORMAL",
+      "description": "Mild symptoms, incomplete information, clinician review.",
+      "patient": {
+        "patientId": "patient-normal-adult",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today. I am not sure when it began.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "chest-pain-ed",
+      "label": "B \u00b7 Safety & patient refusal",
+      "category": "SAFETY",
+      "description": "Current patient chest pain matches the synthetic ED policy.",
+      "patient": {
+        "patientId": "patient-chest-pain-ed",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have chest pain right now. It started this morning.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "home-complete",
+      "label": "Complete low-acuity fixture",
+      "category": "NORMAL",
+      "description": "Only the exact curated low-acuity assessment can clear every home gate.",
+      "patient": {
+        "patientId": "patient-home-complete",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "Mild runny nose for one day. Symptoms are improving. No chest pain. No severe breathing difficulty. No facial droop. No arm weakness. No speech difficulty. No throat swelling. No uncontrolled bleeding. No confusion. No thoughts of self-harm. No cardiac history.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "stroke-red-flag",
+      "label": "Confirmed stroke-pattern fixture",
+      "category": "SAFETY",
+      "description": "Current affirmed patient event invokes the synthetic safety rule.",
+      "patient": {
+        "patientId": "patient-stroke-red-flag",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "My face is drooping and I have arm weakness right now.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "negated-chest-pain",
+      "label": "Context \u00b7 negated symptom",
+      "category": "CONTEXT",
+      "description": "An explicit negative is different from a missing fact.",
+      "patient": {
+        "patientId": "patient-negated-chest-pain",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "No chest pain. I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "historical-symptom",
+      "label": "Context \u00b7 historical symptom",
+      "category": "CONTEXT",
+      "description": "Past patient symptoms must not be treated as current.",
+      "patient": {
+        "patientId": "patient-historical-symptom",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I had chest pain last month. I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "family-history",
+      "label": "Context \u00b7 family history",
+      "category": "CONTEXT",
+      "description": "A family member event must not be attributed to the patient.",
+      "patient": {
+        "patientId": "patient-family-history",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "My father had a heart attack. I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "pediatric",
+      "label": "Unsupported \u00b7 pediatric",
+      "category": "POPULATION",
+      "description": "Patients younger than 18 years require manual escalation.",
+      "patient": {
+        "patientId": "patient-pediatric",
+        "displayName": "Casey Ellis",
+        "demographics": {
+          "ageInMonths": 120,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "pregnant",
+      "label": "Unsupported \u00b7 pregnancy",
+      "category": "POPULATION",
+      "description": "Pregnancy lies outside the supported population.",
+      "patient": {
+        "patientId": "patient-pregnant",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": true,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "zero-evidence",
+      "label": "Failure \u00b7 no eligible guidance",
+      "category": "FAILURE",
+      "description": "Empty verified evidence forces manual escalation.",
+      "patient": {
+        "patientId": "patient-zero-evidence",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "zero_evidence"
+    },
+    {
+      "caseId": "prompt-injection",
+      "label": "Failure \u00b7 injected guideline",
+      "category": "FAILURE",
+      "description": "Instruction-like source content is quarantined.",
+      "patient": {
+        "patientId": "patient-prompt-injection",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "injection"
+    },
+    {
+      "caseId": "tampered-evidence",
+      "label": "Failure \u00b7 content integrity",
+      "category": "FAILURE",
+      "description": "Vector content does not match the independent registry hash.",
+      "patient": {
+        "patientId": "patient-tampered-evidence",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "tampered"
+    },
+    {
+      "caseId": "malformed-model",
+      "label": "Failure \u00b7 malformed synthesis",
+      "category": "FAILURE",
+      "description": "Missing required clinical fields fail schema validation.",
+      "patient": {
+        "patientId": "patient-malformed-model",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "malformed"
+    },
+    {
+      "caseId": "hallucinated-citation",
+      "label": "Failure \u00b7 invented citation",
+      "category": "FAILURE",
+      "description": "An alias outside the current turn manifest is rejected.",
+      "patient": {
+        "patientId": "patient-hallucinated-citation",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "hallucinated_citation"
+    },
+    {
+      "caseId": "invented-fact",
+      "label": "Failure \u00b7 invented patient fact",
+      "category": "FAILURE",
+      "description": "An unsupported assertion cannot be published.",
+      "patient": {
+        "patientId": "patient-invented-fact",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "invented_fact"
+    },
+    {
+      "caseId": "llm-timeout",
+      "label": "Failure \u00b7 provider timeout",
+      "category": "FAILURE",
+      "description": "Manual mode preserves evidence and patient context.",
+      "patient": {
+        "patientId": "patient-llm-timeout",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "timeout"
+    },
+    {
+      "caseId": "provider-429",
+      "label": "Failure \u00b7 provider rate limit",
+      "category": "FAILURE",
+      "description": "Rate limiting never triggers a weaker model fallback.",
+      "patient": {
+        "patientId": "patient-provider-429",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "rate_limit"
+    },
+    {
+      "caseId": "stale-concurrent",
+      "label": "Concurrency fixture",
+      "category": "SECURITY",
+      "description": "Two concurrent turns race; exactly one can commit.",
+      "patient": {
+        "patientId": "patient-stale-concurrent",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "cross-tenant",
+      "label": "Object access fixture",
+      "category": "SECURITY",
+      "description": "An unrelated tenant cannot read or change this session.",
+      "patient": {
+        "patientId": "patient-cross-tenant",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have a mild headache today.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "override-privilege",
+      "label": "Override privilege fixture",
+      "category": "SECURITY",
+      "description": "A standard nurse lacks clinician-override authority.",
+      "patient": {
+        "patientId": "patient-override-privilege",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have chest pain right now.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    },
+    {
+      "caseId": "revoked-delegation",
+      "label": "Revoked delegation fixture",
+      "category": "SECURITY",
+      "description": "A stale token cannot reinstate revoked override delegation.",
+      "patient": {
+        "patientId": "patient-revoked-delegation",
+        "displayName": "Jordan Ellis",
+        "demographics": {
+          "ageInMonths": 456,
+          "isPregnant": false,
+          "biologicalSex": "FEMALE"
+        },
+        "history": [
+          "Seasonal allergies (synthetic record)",
+          "Cardiac history not documented"
+        ],
+        "medications": [
+          "Cetirizine, recorded as needed (synthetic)"
+        ],
+        "allergies": [
+          "No known medication allergies in synthetic record"
+        ],
+        "synthetic": true
+      },
+      "transcript": "I have chest pain right now.",
+      "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+      "scenarioMode": "normal"
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "sessionId": "session-d434bb0fe2e5413f8bed80d18f4c6ce6",
+  "caseId": "normal-adult",
+  "careTeamId": "meridian-navigation",
+  "patient": {
+    "patientId": "patient-normal-adult",
+    "displayName": "Jordan Ellis",
+    "demographics": {
+      "ageInMonths": 456,
+      "isPregnant": false,
+      "biologicalSex": "FEMALE"
+    },
+    "history": [
+      "Seasonal allergies (synthetic record)",
+      "Cardiac history not documented"
+    ],
+    "medications": [
+      "Cetirizine, recorded as needed (synthetic)"
+    ],
+    "allergies": [
+      "No known medication allergies in synthetic record"
+    ],
+    "synthetic": true
+  },
+  "originalTranscript": "I have a mild headache today. I am not sure when it began.",
+  "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+  "state": {
+    "sessionId": "session-d434bb0fe2e5413f8bed80d18f4c6ce6",
+    "processingStatus": "COMPLETED",
+    "readinessState": "INCOMPLETE",
+    "currentStateVersion": 1,
+    "activeTurnId": "ui-test-turn"
+  },
+  "latestResponse": {
+    "responseId": "response-7cbcc4430088440daefe29748f4a0f0e",
+    "sessionId": "session-d434bb0fe2e5413f8bed80d18f4c6ce6",
+    "turnId": "ui-test-turn",
+    "stateVersion": 1,
+    "readinessState": "INCOMPLETE",
+    "recommendation": {
+      "recommendationId": "recommendation-bca87e73a6744f369d08043d39673a53",
+      "recommendedDisposition": "CLINICIAN_WITHIN_24H",
+      "readinessState": "INCOMPLETE",
+      "safetyLocked": false,
+      "validatedRationale": [
+        {
+          "claimId": "claim-mild-headache-review",
+          "claim": "An affirmed current mild headache in this verified adult, nonpregnant assessment matches the synthetic clinician-within-24-hours fixture. No affirmed current patient safety event was identified; any unstated findings remain unknown.",
+          "factRefs": [
+            "F-mild-headache",
+            "F-age",
+            "F-pregnancy"
+          ],
+          "evidenceRefs": [
+            "Ref-1"
+          ]
+        }
+      ],
+      "computedStateVersion": 1,
+      "timestamp": "2026-09-28T21:11:34.416113Z",
+      "supersedesRecommendationId": null
+    },
+    "rationale": [
+      {
+        "claimId": "claim-mild-headache-review",
+        "claim": "An affirmed current mild headache in this verified adult, nonpregnant assessment matches the synthetic clinician-within-24-hours fixture. No affirmed current patient safety event was identified; any unstated findings remain unknown.",
+        "factRefs": [
+          "F-mild-headache",
+          "F-age",
+          "F-pregnancy"
+        ],
+        "evidenceRefs": [
+          "Ref-1"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "alias": "Ref-1",
+        "chunk": {
+          "chunkId": "demo-mild-headache:0",
+          "guidelineId": "DEMO-MILD-HEADACHE",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+          "sourceHash": "1d1f4292ff8050ed2fe49b56c4dad3c77c98d007b41248dae5bd425ff7f5d236",
+          "retrievalScore": 0.18440511
+        }
+      },
+      {
+        "alias": "Ref-2",
+        "chunk": {
+          "chunkId": "demo-manual:0",
+          "guidelineId": "DEMO-MANUAL",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+          "sourceHash": "f09defadf48bb1c16d7cc71180161596298920e2a79dde36553d6f26d587f8c8",
+          "retrievalScore": 0.05013234
+        }
+      }
+    ],
+    "missingInformation": [
+      "Symptom onset and duration",
+      "Patient cardiac history",
+      "Explicit safety assessment: possible stroke, severe respiratory distress, severe chest pain, anaphylaxis, uncontrolled bleeding, altered consciousness, immediate self harm, chest pain"
+    ],
+    "systemAlerts": [],
+    "factGraph": {
+      "facts": [
+        {
+          "factId": "F-age",
+          "factType": "AGE_MONTHS",
+          "normalizedValue": "456",
+          "assertionStatus": "PRESENT",
+          "source": "verified patient context"
+        },
+        {
+          "factId": "F-pregnancy",
+          "factType": "PREGNANCY",
+          "normalizedValue": "false",
+          "assertionStatus": "ABSENT",
+          "source": "verified patient context"
+        },
+        {
+          "factId": "F-safety-possible_stroke",
+          "factType": "CURRENT_SAFETY:POSSIBLE_STROKE",
+          "normalizedValue": "POSSIBLE_STROKE",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-severe_respiratory_distress",
+          "factType": "CURRENT_SAFETY:SEVERE_RESPIRATORY_DISTRESS",
+          "normalizedValue": "SEVERE_RESPIRATORY_DISTRESS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-severe_chest_pain",
+          "factType": "CURRENT_SAFETY:SEVERE_CHEST_PAIN",
+          "normalizedValue": "SEVERE_CHEST_PAIN",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-anaphylaxis",
+          "factType": "CURRENT_SAFETY:ANAPHYLAXIS",
+          "normalizedValue": "ANAPHYLAXIS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-uncontrolled_bleeding",
+          "factType": "CURRENT_SAFETY:UNCONTROLLED_BLEEDING",
+          "normalizedValue": "UNCONTROLLED_BLEEDING",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-altered_consciousness",
+          "factType": "CURRENT_SAFETY:ALTERED_CONSCIOUSNESS",
+          "normalizedValue": "ALTERED_CONSCIOUSNESS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-immediate_self_harm",
+          "factType": "CURRENT_SAFETY:IMMEDIATE_SELF_HARM",
+          "normalizedValue": "IMMEDIATE_SELF_HARM",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-chest_pain",
+          "factType": "CURRENT_SAFETY:CHEST_PAIN",
+          "normalizedValue": "CHEST_PAIN",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-mild-headache",
+          "factType": "MILD_HEADACHE",
+          "normalizedValue": "mild headache",
+          "assertionStatus": "PRESENT",
+          "source": "symptom assessment"
+        },
+        {
+          "factId": "F-cardiac-history",
+          "factType": "CARDIAC_HISTORY",
+          "normalizedValue": "cardiac history",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-onset",
+          "factType": "SYMPTOM_ONSET",
+          "normalizedValue": "unknown",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-complete-assessment",
+          "factType": "CURATED_COMPLETE_ASSESSMENT",
+          "normalizedValue": "not established",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "synthetic home policy exact assessment gate"
+        }
+      ]
+    },
+    "safety": {
+      "supportedPopulation": true,
+      "contextCertain": true,
+      "safetyLocked": false,
+      "requiredDisposition": null,
+      "matchedRuleIds": [],
+      "events": [],
+      "validationCodes": []
+    },
+    "retrievalManifest": {
+      "manifestId": "manifest-5715d2ab9792af90c14271a3d15dd7a8",
+      "sessionId": "session-d434bb0fe2e5413f8bed80d18f4c6ce6",
+      "turnId": "ui-test-turn",
+      "stateVersion": 1,
+      "evidence": [
+        {
+          "alias": "Ref-1",
+          "chunk": {
+            "chunkId": "demo-mild-headache:0",
+            "guidelineId": "DEMO-MILD-HEADACHE",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+            "sourceHash": "1d1f4292ff8050ed2fe49b56c4dad3c77c98d007b41248dae5bd425ff7f5d236",
+            "retrievalScore": 0.18440511
+          }
+        },
+        {
+          "alias": "Ref-2",
+          "chunk": {
+            "chunkId": "demo-manual:0",
+            "guidelineId": "DEMO-MANUAL",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+            "sourceHash": "f09defadf48bb1c16d7cc71180161596298920e2a79dde36553d6f26d587f8c8",
+            "retrievalScore": 0.05013234
+          }
+        }
+      ],
+      "integrityViolations": []
+    },
+    "timings": {
+      "extractionMs": 3.63176700011536,
+      "retrievalMs": 8.92984299980526,
+      "synthesisMs": 0.029521999749704264,
+      "policyValidationMs": 0.06828800042057992,
+      "authorizationMs": 2.277438999954029,
+      "databaseCommitMs": 0.855,
+      "totalMs": 27.312799000127125
+    },
+    "mode": "DETERMINISTIC",
+    "validationCodes": [
+      "SYNTHETIC_NORMAL_RULE_PASSED",
+      "HOME_GATES_NOT_MET",
+      "VALIDATED_SYNTHESIS"
+    ]
+  },
+  "recommendations": [
+    {
+      "recommendationId": "recommendation-bca87e73a6744f369d08043d39673a53",
+      "recommendedDisposition": "CLINICIAN_WITHIN_24H",
+      "readinessState": "INCOMPLETE",
+      "safetyLocked": false,
+      "validatedRationale": [
+        {
+          "claimId": "claim-mild-headache-review",
+          "claim": "An affirmed current mild headache in this verified adult, nonpregnant assessment matches the synthetic clinician-within-24-hours fixture. No affirmed current patient safety event was identified; any unstated findings remain unknown.",
+          "factRefs": [
+            "F-mild-headache",
+            "F-age",
+            "F-pregnancy"
+          ],
+          "evidenceRefs": [
+            "Ref-1"
+          ]
+        }
+      ],
+      "computedStateVersion": 1,
+      "timestamp": "2026-09-28T21:11:34.416113Z",
+      "supersedesRecommendationId": null
+    }
+  ],
+  "actions": [],
+  "patientResponses": [],
+  "recommendationStatus": "AWAITING_REVIEW",
+  "patientOutcome": "UNRECORDED",
+  "permissions": {
+    "canView": true,
+    "canAccept": true,
+    "canDocumentRefusal": true,
+    "canEscalate": true,
+    "canOverride": false,
+    "authorizationServiceAvailable": true
+  }
+}

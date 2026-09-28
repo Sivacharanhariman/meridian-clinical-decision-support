@@ -1,0 +1,14 @@
+.venv/
+node_modules/
+.next/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+*.sqlite*
+*.db*
+.env
+*.log
+coverage/
+test-results/
+artifacts/

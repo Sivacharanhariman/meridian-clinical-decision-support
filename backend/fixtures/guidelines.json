@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "syntheticOnly": true,
+  "disclaimer": "Demonstration fixtures only; not validated clinical protocols. Do not use for real patient care.",
+  "records": [
+    {
+      "chunkId": "demo-mild-headache:0",
+      "guidelineId": "DEMO-MILD-HEADACHE",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-home-monitoring:0",
+      "guidelineId": "DEMO-HOME-MONITORING",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, HOME_MONITORING is possible only after every deterministic home gate passes: the adult has explicitly confirmed nonpregnancy; current eligible guidance is present; every safety category is explicitly absent; cardiac history is known; and the assessment exactly matches the complete fixture: Mild runny nose for one day. Symptoms are improving. No chest pain. No severe breathing difficulty. No facial droop. No arm weakness. No speech difficulty. No throat swelling. No uncontrolled bleeding. No confusion. No thoughts of self-harm. No cardiac history. Incomplete, ambiguous, or unsupported cases do not meet this fixture. A current affirmed safety event prevents this pathway.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-stroke:0",
+      "guidelineId": "DEMO-STROKE",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category POSSIBLE_STROKE maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: facial droop; face is drooping; arm weakness; speech difficulty. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-resp:0",
+      "guidelineId": "DEMO-RESP",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category SEVERE_RESPIRATORY_DISTRESS maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: severe breathing difficulty; cannot breathe; gasping for air. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-chest-severe:0",
+      "guidelineId": "DEMO-CHEST-SEVERE",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category SEVERE_CHEST_PAIN maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: crushing chest pain; severe chest pain with sweating. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-anaphylaxis:0",
+      "guidelineId": "DEMO-ANAPHYLAXIS",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category ANAPHYLAXIS maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: throat swelling; tongue swelling with wheezing. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-bleed:0",
+      "guidelineId": "DEMO-BLEED",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category UNCONTROLLED_BLEEDING maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: uncontrolled bleeding; bleeding will not stop. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-conscious:0",
+      "guidelineId": "DEMO-CONSCIOUS",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category ALTERED_CONSCIOUSNESS maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: unresponsive; confusion; altered consciousness. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-self-harm:0",
+      "guidelineId": "DEMO-SELF-HARM",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category IMMEDIATE_SELF_HARM maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: plan to kill myself now; thoughts of self-harm; immediate self-harm. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-current-chest-pain:0",
+      "guidelineId": "DEMO-CURRENT-CHEST-PAIN",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category CHEST_PAIN maps to EMERGENCY_DEPARTMENT only for a confirmed, current, affirmed patient event matching these fixture phrases: chest pain; heart attack. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    },
+    {
+      "chunkId": "demo-manual:0",
+      "guidelineId": "DEMO-MANUAL",
+      "guidelineVersion": "synthetic-1.0",
+      "chunkIndex": 0,
+      "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+      "metadata": {
+        "approvalStatus": "APPROVED",
+        "population": "ADULT",
+        "minAgeMonths": 216,
+        "maxAgeMonths": 1560,
+        "pregnancyApplicability": "NON_PREGNANT_ONLY",
+        "effectiveDate": "2025-01-01",
+        "expiryDate": "2030-12-31"
+      }
+    }
+  ]
+}

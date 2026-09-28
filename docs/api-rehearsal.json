@@ -1,0 +1,86 @@
+{
+  "mode": "deterministic",
+  "syntheticOnly": true,
+  "scenarios": [
+    {
+      "caseId": "normal-adult",
+      "disposition": "CLINICIAN_WITHIN_24H",
+      "action": "ACCEPT_RECOMMENDATION",
+      "auditEvents": 3,
+      "roundTripWithReadAndReplayMs": 24.41,
+      "passed": true
+    },
+    {
+      "caseId": "chest-pain-ed",
+      "disposition": "EMERGENCY_DEPARTMENT",
+      "action": "DOCUMENT_PATIENT_REFUSAL",
+      "recommendationPreserved": true,
+      "safetyLocked": true,
+      "passed": true
+    },
+    {
+      "caseId": "llm-timeout",
+      "disposition": "MANUAL_ESCALATION",
+      "evidenceRetained": true,
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "requestCount": 3,
+    "stages": {
+      "extractionMs": {
+        "samples": 3,
+        "p50Ms": 0.442,
+        "p95Ms": 2.219,
+        "p99Ms": 2.377
+      },
+      "retrievalMs": {
+        "samples": 3,
+        "p50Ms": 4.516,
+        "p95Ms": 5.137,
+        "p99Ms": 5.192
+      },
+      "synthesisMs": {
+        "samples": 3,
+        "p50Ms": 0.025,
+        "p95Ms": 0.028,
+        "p99Ms": 0.028
+      },
+      "policyValidationMs": {
+        "samples": 3,
+        "p50Ms": 0.061,
+        "p95Ms": 0.062,
+        "p99Ms": 0.062
+      },
+      "authorizationMs": {
+        "samples": 3,
+        "p50Ms": 0.958,
+        "p95Ms": 0.969,
+        "p99Ms": 0.97
+      },
+      "databaseCommitMs": {
+        "samples": 3,
+        "p50Ms": 1.377,
+        "p95Ms": 1.481,
+        "p99Ms": 1.491
+      },
+      "totalMs": {
+        "samples": 3,
+        "p50Ms": 11.465,
+        "p95Ms": 14.615,
+        "p99Ms": 14.895
+      }
+    },
+    "provider429Rate": 0.0,
+    "deadlineExceededRate": 0.3333333333333333,
+    "degradedModeRate": 0.3333333333333333,
+    "timeToSafeRender": {
+      "samples": 0,
+      "p50Ms": 0.0,
+      "p95Ms": 0.0,
+      "p99Ms": 0.0
+    },
+    "targetP95Ms": 4000,
+    "targetIsGuarantee": false
+  }
+}

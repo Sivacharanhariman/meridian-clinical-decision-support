@@ -1,0 +1,101 @@
+{
+  "policyVersion": "synthetic-policy-1.0",
+  "disclaimer": "Demonstration fixtures only; not validated clinical protocols. Do not use for real patient care.",
+  "adultMinMonths": 216,
+  "rules": [
+    {
+      "ruleId": "DEMO-STROKE",
+      "category": "POSSIBLE_STROKE",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "facial droop",
+        "face is drooping",
+        "arm weakness",
+        "speech difficulty"
+      ]
+    },
+    {
+      "ruleId": "DEMO-RESP",
+      "category": "SEVERE_RESPIRATORY_DISTRESS",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "severe breathing difficulty",
+        "cannot breathe",
+        "gasping for air"
+      ]
+    },
+    {
+      "ruleId": "DEMO-CHEST-SEVERE",
+      "category": "SEVERE_CHEST_PAIN",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "crushing chest pain",
+        "severe chest pain with sweating"
+      ]
+    },
+    {
+      "ruleId": "DEMO-ANAPHYLAXIS",
+      "category": "ANAPHYLAXIS",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "throat swelling",
+        "tongue swelling with wheezing"
+      ]
+    },
+    {
+      "ruleId": "DEMO-BLEED",
+      "category": "UNCONTROLLED_BLEEDING",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "uncontrolled bleeding",
+        "bleeding will not stop"
+      ]
+    },
+    {
+      "ruleId": "DEMO-CONSCIOUS",
+      "category": "ALTERED_CONSCIOUSNESS",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "unresponsive",
+        "confusion",
+        "altered consciousness"
+      ]
+    },
+    {
+      "ruleId": "DEMO-SELF-HARM",
+      "category": "IMMEDIATE_SELF_HARM",
+      "disposition": "EMERGENCY_911",
+      "patterns": [
+        "plan to kill myself now",
+        "thoughts of self-harm",
+        "immediate self-harm"
+      ]
+    },
+    {
+      "ruleId": "DEMO-CHEST-CURRENT",
+      "category": "CHEST_PAIN",
+      "disposition": "EMERGENCY_DEPARTMENT",
+      "patterns": [
+        "chest pain",
+        "heart attack"
+      ]
+    }
+  ],
+  "homeGate": {
+    "requiredExactAssessment": "Mild runny nose for one day. Symptoms are improving. No chest pain. No severe breathing difficulty. No facial droop. No arm weakness. No speech difficulty. No throat swelling. No uncontrolled bleeding. No confusion. No thoughts of self-harm. No cardiac history.",
+    "requireSupportedPopulation": true,
+    "requireEligibleEvidence": true,
+    "requireAllSafetyCategoriesAbsent": true,
+    "requireKnownCardiacHistory": true,
+    "allowedNonclinicalNotes": [
+      "Synthetic training encounter. Confirm missing information with the patient."
+    ]
+  },
+  "normalRule": {
+    "pattern": "mild headache",
+    "disposition": "CLINICIAN_WITHIN_24H",
+    "requiresNoAffirmedSafetyEvent": true,
+    "requiresEligibleEvidence": true
+  },
+  "uncertainDisposition": "MANUAL_ESCALATION"
+}

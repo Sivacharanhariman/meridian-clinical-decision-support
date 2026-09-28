@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "checks": [
+    "No clinical recommendation before analysis",
+    "Demo A: evidence, clinician advisory, nurse acceptance, audit; no inferred patient consent",
+    "Demo B: ED safety lock and refusal persist as separate states; emergency styling preserved",
+    "Outage: explicit manual mode, acceptance disabled, escalation available",
+    "Complete home positive control; edits disable decisions and uncertain new input requires manual review",
+    "Authorized clinician override records a separate human decision without changing advisory",
+    "390px responsive layout: no horizontal overflow"
+  ],
+  "pageErrors": 0,
+  "screenshots": "docs/screenshots",
+  "metrics": {
+    "requestCount": 8,
+    "stages": {
+      "extractionMs": {
+        "samples": 8,
+        "p50Ms": 0.536,
+        "p95Ms": 2.357,
+        "p99Ms": 2.405
+      },
+      "retrievalMs": {
+        "samples": 8,
+        "p50Ms": 5.402,
+        "p95Ms": 6.599,
+        "p99Ms": 6.603
+      },
+      "synthesisMs": {
+        "samples": 8,
+        "p50Ms": 0.026,
+        "p95Ms": 0.054,
+        "p99Ms": 0.061
+      },
+      "policyValidationMs": {
+        "samples": 8,
+        "p50Ms": 0.062,
+        "p95Ms": 0.12,
+        "p99Ms": 0.141
+      },
+      "authorizationMs": {
+        "samples": 8,
+        "p50Ms": 1.368,
+        "p95Ms": 1.782,
+        "p99Ms": 1.845
+      },
+      "databaseCommitMs": {
+        "samples": 8,
+        "p50Ms": 1.386,
+        "p95Ms": 2.084,
+        "p99Ms": 2.23
+      },
+      "totalMs": {
+        "samples": 8,
+        "p50Ms": 14.381,
+        "p95Ms": 15.69,
+        "p99Ms": 15.876
+      }
+    },
+    "provider429Rate": 0,
+    "deadlineExceededRate": 0.25,
+    "degradedModeRate": 0.375,
+    "timeToSafeRender": {
+      "samples": 4,
+      "p50Ms": 104.15,
+      "p95Ms": 127.29,
+      "p99Ms": 129.378
+    },
+    "targetP95Ms": 4000,
+    "targetIsGuarantee": false
+  }
+}

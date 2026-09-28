@@ -1,0 +1,394 @@
+{
+  "sessionId": "session-3db46fbab3d248f4ae9bc61b41c782db",
+  "caseId": "chest-pain-ed",
+  "careTeamId": "meridian-navigation",
+  "patient": {
+    "patientId": "patient-chest-pain-ed",
+    "displayName": "Jordan Ellis",
+    "demographics": {
+      "ageInMonths": 456,
+      "isPregnant": false,
+      "biologicalSex": "FEMALE"
+    },
+    "history": [
+      "Seasonal allergies (synthetic record)",
+      "Cardiac history not documented"
+    ],
+    "medications": [
+      "Cetirizine, recorded as needed (synthetic)"
+    ],
+    "allergies": [
+      "No known medication allergies in synthetic record"
+    ],
+    "synthetic": true
+  },
+  "originalTranscript": "I have chest pain right now. It started this morning.",
+  "nurseNotes": "Synthetic training encounter. Confirm missing information with the patient.",
+  "state": {
+    "sessionId": "session-3db46fbab3d248f4ae9bc61b41c782db",
+    "processingStatus": "COMPLETED",
+    "readinessState": "SAFETY_LOCKED",
+    "currentStateVersion": 1,
+    "activeTurnId": "ui-test-turn"
+  },
+  "latestResponse": {
+    "responseId": "response-d42d833ce7084333b995509c419db07b",
+    "sessionId": "session-3db46fbab3d248f4ae9bc61b41c782db",
+    "turnId": "ui-test-turn",
+    "stateVersion": 1,
+    "readinessState": "SAFETY_LOCKED",
+    "recommendation": {
+      "recommendationId": "recommendation-443637dde226420cb9da2ef18c6b8b7b",
+      "recommendedDisposition": "EMERGENCY_DEPARTMENT",
+      "readinessState": "SAFETY_LOCKED",
+      "safetyLocked": true,
+      "validatedRationale": [
+        {
+          "claimId": "claim-demo-chest-current",
+          "claim": "The assessment explicitly describes a current patient event in the chest pain category. The synthetic DEMO-CHEST-CURRENT fixture requires EMERGENCY_DEPARTMENT and prevents lower-acuity automation.",
+          "factRefs": [
+            "F-event-1"
+          ],
+          "evidenceRefs": [
+            "Ref-2"
+          ]
+        }
+      ],
+      "computedStateVersion": 1,
+      "timestamp": "2026-09-28T21:11:34.441483Z",
+      "supersedesRecommendationId": null
+    },
+    "rationale": [
+      {
+        "claimId": "claim-demo-chest-current",
+        "claim": "The assessment explicitly describes a current patient event in the chest pain category. The synthetic DEMO-CHEST-CURRENT fixture requires EMERGENCY_DEPARTMENT and prevents lower-acuity automation.",
+        "factRefs": [
+          "F-event-1"
+        ],
+        "evidenceRefs": [
+          "Ref-2"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "alias": "Ref-1",
+        "chunk": {
+          "chunkId": "demo-chest-severe:0",
+          "guidelineId": "DEMO-CHEST-SEVERE",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category SEVERE_CHEST_PAIN maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: crushing chest pain; severe chest pain with sweating. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+          "sourceHash": "db81e58c9a088a46876865ed1172ab7ac7741dd4a9a803b09e7a5eec118b5d27",
+          "retrievalScore": 0.24144421
+        }
+      },
+      {
+        "alias": "Ref-2",
+        "chunk": {
+          "chunkId": "demo-current-chest-pain:0",
+          "guidelineId": "DEMO-CURRENT-CHEST-PAIN",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category CHEST_PAIN maps to EMERGENCY_DEPARTMENT only for a confirmed, current, affirmed patient event matching these fixture phrases: chest pain; heart attack. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+          "sourceHash": "27d30411705b34ab35e2eb454f8b1a647cb28d2e87402b2cb408f2a219b82463",
+          "retrievalScore": 0.20478657
+        }
+      },
+      {
+        "alias": "Ref-3",
+        "chunk": {
+          "chunkId": "demo-mild-headache:0",
+          "guidelineId": "DEMO-MILD-HEADACHE",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+          "sourceHash": "1d1f4292ff8050ed2fe49b56c4dad3c77c98d007b41248dae5bd425ff7f5d236",
+          "retrievalScore": 0.05445081
+        }
+      },
+      {
+        "alias": "Ref-4",
+        "chunk": {
+          "chunkId": "demo-self-harm:0",
+          "guidelineId": "DEMO-SELF-HARM",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category IMMEDIATE_SELF_HARM maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: plan to kill myself now; thoughts of self-harm; immediate self-harm. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+          "sourceHash": "478c753496222b0370e3a4135d6e79a5d9689ededfee4a02a8f5e7eacdf58822",
+          "retrievalScore": 0.04749837
+        }
+      },
+      {
+        "alias": "Ref-5",
+        "chunk": {
+          "chunkId": "demo-manual:0",
+          "guidelineId": "DEMO-MANUAL",
+          "guidelineVersion": "synthetic-1.0",
+          "chunkIndex": 0,
+          "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+          "sourceHash": "f09defadf48bb1c16d7cc71180161596298920e2a79dde36553d6f26d587f8c8",
+          "retrievalScore": 0.04264601
+        }
+      }
+    ],
+    "missingInformation": [
+      "Patient cardiac history",
+      "Explicit safety assessment: possible stroke, severe respiratory distress, severe chest pain, anaphylaxis, uncontrolled bleeding, altered consciousness, immediate self harm"
+    ],
+    "systemAlerts": [
+      "A confirmed synthetic safety rule blocks lower-acuity automation."
+    ],
+    "factGraph": {
+      "facts": [
+        {
+          "factId": "F-age",
+          "factType": "AGE_MONTHS",
+          "normalizedValue": "456",
+          "assertionStatus": "PRESENT",
+          "source": "verified patient context"
+        },
+        {
+          "factId": "F-pregnancy",
+          "factType": "PREGNANCY",
+          "normalizedValue": "false",
+          "assertionStatus": "ABSENT",
+          "source": "verified patient context"
+        },
+        {
+          "factId": "F-event-1",
+          "factType": "CONTEXT_EVENT:CHEST_PAIN",
+          "normalizedValue": "PATIENT; CURRENT; AFFIRMED; chest pain",
+          "assertionStatus": "PRESENT",
+          "source": "symptomDescription"
+        },
+        {
+          "factId": "F-safety-possible_stroke",
+          "factType": "CURRENT_SAFETY:POSSIBLE_STROKE",
+          "normalizedValue": "POSSIBLE_STROKE",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-severe_respiratory_distress",
+          "factType": "CURRENT_SAFETY:SEVERE_RESPIRATORY_DISTRESS",
+          "normalizedValue": "SEVERE_RESPIRATORY_DISTRESS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-severe_chest_pain",
+          "factType": "CURRENT_SAFETY:SEVERE_CHEST_PAIN",
+          "normalizedValue": "SEVERE_CHEST_PAIN",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-anaphylaxis",
+          "factType": "CURRENT_SAFETY:ANAPHYLAXIS",
+          "normalizedValue": "ANAPHYLAXIS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-uncontrolled_bleeding",
+          "factType": "CURRENT_SAFETY:UNCONTROLLED_BLEEDING",
+          "normalizedValue": "UNCONTROLLED_BLEEDING",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-altered_consciousness",
+          "factType": "CURRENT_SAFETY:ALTERED_CONSCIOUSNESS",
+          "normalizedValue": "ALTERED_CONSCIOUSNESS",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-immediate_self_harm",
+          "factType": "CURRENT_SAFETY:IMMEDIATE_SELF_HARM",
+          "normalizedValue": "IMMEDIATE_SELF_HARM",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-safety-chest_pain",
+          "factType": "CURRENT_SAFETY:CHEST_PAIN",
+          "normalizedValue": "CHEST_PAIN",
+          "assertionStatus": "PRESENT",
+          "source": "explicit context events"
+        },
+        {
+          "factId": "F-mild-headache",
+          "factType": "MILD_HEADACHE",
+          "normalizedValue": "mild headache",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-cardiac-history",
+          "factType": "CARDIAC_HISTORY",
+          "normalizedValue": "cardiac history",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "not stated"
+        },
+        {
+          "factId": "F-onset",
+          "factType": "SYMPTOM_ONSET",
+          "normalizedValue": "explicitly stated",
+          "assertionStatus": "PRESENT",
+          "source": "symptomDescription"
+        },
+        {
+          "factId": "F-complete-assessment",
+          "factType": "CURATED_COMPLETE_ASSESSMENT",
+          "normalizedValue": "not established",
+          "assertionStatus": "UNKNOWN_NOT_STATED",
+          "source": "synthetic home policy exact assessment gate"
+        }
+      ]
+    },
+    "safety": {
+      "supportedPopulation": true,
+      "contextCertain": true,
+      "safetyLocked": true,
+      "requiredDisposition": "EMERGENCY_DEPARTMENT",
+      "matchedRuleIds": [
+        "DEMO-CHEST-CURRENT"
+      ],
+      "events": [
+        {
+          "eventId": "event-1",
+          "category": "CHEST_PAIN",
+          "assertion": "AFFIRMED",
+          "temporality": "CURRENT",
+          "subject": "PATIENT",
+          "sourceText": "I have chest pain right now.",
+          "factId": "F-event-1"
+        }
+      ],
+      "validationCodes": [
+        "DETERMINISTIC_SAFETY_RULE_MATCHED"
+      ]
+    },
+    "retrievalManifest": {
+      "manifestId": "manifest-97f10512cafcc8c722b7825ca6282171",
+      "sessionId": "session-3db46fbab3d248f4ae9bc61b41c782db",
+      "turnId": "ui-test-turn",
+      "stateVersion": 1,
+      "evidence": [
+        {
+          "alias": "Ref-1",
+          "chunk": {
+            "chunkId": "demo-chest-severe:0",
+            "guidelineId": "DEMO-CHEST-SEVERE",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category SEVERE_CHEST_PAIN maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: crushing chest pain; severe chest pain with sweating. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+            "sourceHash": "db81e58c9a088a46876865ed1172ab7ac7741dd4a9a803b09e7a5eec118b5d27",
+            "retrievalScore": 0.24144421
+          }
+        },
+        {
+          "alias": "Ref-2",
+          "chunk": {
+            "chunkId": "demo-current-chest-pain:0",
+            "guidelineId": "DEMO-CURRENT-CHEST-PAIN",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category CHEST_PAIN maps to EMERGENCY_DEPARTMENT only for a confirmed, current, affirmed patient event matching these fixture phrases: chest pain; heart attack. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+            "sourceHash": "27d30411705b34ab35e2eb454f8b1a647cb28d2e87402b2cb408f2a219b82463",
+            "retrievalScore": 0.20478657
+          }
+        },
+        {
+          "alias": "Ref-3",
+          "chunk": {
+            "chunkId": "demo-mild-headache:0",
+            "guidelineId": "DEMO-MILD-HEADACHE",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, an adult with explicitly confirmed nonpregnancy and a mild headache, with no current affirmed safety event, maps to CLINICIAN_WITHIN_24H. Missing onset, cardiac history, or other symptom information remains unknown and cannot establish absence. This source alone does not permit home monitoring.",
+            "sourceHash": "1d1f4292ff8050ed2fe49b56c4dad3c77c98d007b41248dae5bd425ff7f5d236",
+            "retrievalScore": 0.05445081
+          }
+        },
+        {
+          "alias": "Ref-4",
+          "chunk": {
+            "chunkId": "demo-self-harm:0",
+            "guidelineId": "DEMO-SELF-HARM",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, the category IMMEDIATE_SELF_HARM maps to EMERGENCY_911 only for a confirmed, current, affirmed patient event matching these fixture phrases: plan to kill myself now; thoughts of self-harm; immediate self-harm. Negated symptoms, historical symptoms, family-member events, and uncertain context do not establish a current patient event. The deterministic safety gate, not similarity score, determines applicability.",
+            "sourceHash": "478c753496222b0370e3a4135d6e79a5d9689ededfee4a02a8f5e7eacdf58822",
+            "retrievalScore": 0.04749837
+          }
+        },
+        {
+          "alias": "Ref-5",
+          "chunk": {
+            "chunkId": "demo-manual:0",
+            "guidelineId": "DEMO-MANUAL",
+            "guidelineVersion": "synthetic-1.0",
+            "chunkIndex": 0,
+            "text": "SYNTHETIC DEMONSTRATION ONLY. This is a fake fixture, not a validated clinical protocol. Never use for real patient care. Within this demonstration, uncertain symptom context, unsupported population, missing eligible evidence, or incomplete low-acuity assessment maps to MANUAL_ESCALATION. Confirmed current safety events are evaluated independently. Unknown facts remain unknown; missing information cannot substantiate positive or negative assertions. Retrieval failure never authorizes a lower-acuity recommendation.",
+            "sourceHash": "f09defadf48bb1c16d7cc71180161596298920e2a79dde36553d6f26d587f8c8",
+            "retrievalScore": 0.04264601
+          }
+        }
+      ],
+      "integrityViolations": []
+    },
+    "timings": {
+      "extractionMs": 0.4717190004157601,
+      "retrievalMs": 5.948043999978836,
+      "synthesisMs": 0.021413000013126293,
+      "policyValidationMs": 0.15805599969098694,
+      "authorizationMs": 0.8556269999644428,
+      "databaseCommitMs": 0.512,
+      "totalMs": 11.426421000052244
+    },
+    "mode": "DETERMINISTIC",
+    "validationCodes": [
+      "DETERMINISTIC_SAFETY_RULE_MATCHED",
+      "SAFETY_GATE_PASSED",
+      "VALIDATED_SYNTHESIS"
+    ]
+  },
+  "recommendations": [
+    {
+      "recommendationId": "recommendation-443637dde226420cb9da2ef18c6b8b7b",
+      "recommendedDisposition": "EMERGENCY_DEPARTMENT",
+      "readinessState": "SAFETY_LOCKED",
+      "safetyLocked": true,
+      "validatedRationale": [
+        {
+          "claimId": "claim-demo-chest-current",
+          "claim": "The assessment explicitly describes a current patient event in the chest pain category. The synthetic DEMO-CHEST-CURRENT fixture requires EMERGENCY_DEPARTMENT and prevents lower-acuity automation.",
+          "factRefs": [
+            "F-event-1"
+          ],
+          "evidenceRefs": [
+            "Ref-2"
+          ]
+        }
+      ],
+      "computedStateVersion": 1,
+      "timestamp": "2026-09-28T21:11:34.441483Z",
+      "supersedesRecommendationId": null
+    }
+  ],
+  "actions": [],
+  "patientResponses": [],
+  "recommendationStatus": "AWAITING_REVIEW",
+  "patientOutcome": "UNRECORDED",
+  "permissions": {
+    "canView": true,
+    "canAccept": true,
+    "canDocumentRefusal": true,
+    "canEscalate": true,
+    "canOverride": false,
+    "authorizationServiceAvailable": true
+  }
+}
